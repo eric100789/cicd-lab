@@ -52,6 +52,12 @@ jobs:
         with:
           report_paths: 'build/test-results/results.xml'
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+
       # --- Homework ---
 
       - name: Compute image tag
