@@ -35,29 +35,24 @@ jobs:
 
       # add your steps here, e.g. lint, test, build etc.
 
-      # --- 作業要求檢查項目開始 ---
+      # --- Homework ---
       
-      # 1. TypeScript typecheck (要求 20%)
       - name: TypeScript typecheck
-        run: npm run typecheck # 請確認 package.json 有此 script，通常是 tsc --noEmit [cite: 9]
+        run: npm run typecheck 
 
-      # 2. Prettier check (要求 20%)
       - name: Prettier check
-        run: npx prettier --check . # 檢查格式是否正確 [cite: 10]
+        run: npx prettier --check .
 
-      # 3. Test (要求 20%)
       - name: Run Tests
-        run: npm test # 執行專案測試 [cite: 11]
+        run: npm test
 
-      # 4. 將測試結果顯示於結果頁面 (要求 20%)
       - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v4 # 常用於顯示測試結果的 Action [cite: 14]
-        if: always() # 即使前面的 Test 失敗也要執行，才能顯示錯誤報告 
+        uses: mikepenz/action-junit-report@v4 
+        if: always() 
         with:
-          report_paths: '**/build/test-results/**/*.xml' # 需配合專案測試輸出的路徑 [cite: 13]
+          report_paths: '**/build/test-results/**/*.xml'
 
-      # --- 作業要求檢查項目結束 ---
-        # ... 後續原有的 metadata 與 build 步驟
+      # --- Homework ---
 
       - name: Compute image tag
         id: meta
