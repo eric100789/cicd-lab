@@ -36,9 +36,9 @@ jobs:
       # add your steps here, e.g. lint, test, build etc.
 
       # --- Homework ---
-      
+
       - name: TypeScript typecheck
-        run: npm run typecheck 
+        run: npm run typecheck
 
       - name: Prettier check
         run: npx prettier --check .
@@ -47,8 +47,8 @@ jobs:
         run: npm test
 
       - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v4 
-        if: always() 
+        uses: mikepenz/action-junit-report@v4
+        if: always()
         with:
           report_paths: '**/build/test-results/**/*.xml'
 
