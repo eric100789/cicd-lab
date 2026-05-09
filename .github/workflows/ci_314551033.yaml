@@ -62,8 +62,9 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         if: always()
         with:
-          json-summary-path: './coverage/coverage-summary.json'
-          json-final-path: './coverage/coverage-summary.json'
+          coverage_file: 'build/coverage/lcov.info'
+          report_dir: 'build/coverage'
+          fail_ci_if_error: true
 
       # --- Homework ---
 
